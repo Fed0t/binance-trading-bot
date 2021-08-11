@@ -11,6 +11,7 @@ class CoinWrapperSymbol extends React.Component {
   }
 
   tryRequire(path){
+    console.log(path)
     try {
       return require(path);
     } catch (err) {
@@ -63,7 +64,7 @@ class CoinWrapperSymbol extends React.Component {
               ]
             : ''}
           {
-            this.tryRequire(`../img/${_.toLower(baseAsset)}.png`) ? (
+            this.tryRequire(`public/img/${_.toLower(baseAsset)}.png`) ? (
                 <img
                     src={`./img/${_.toLower(baseAsset)}.png`}
                     className='crypto-img'
