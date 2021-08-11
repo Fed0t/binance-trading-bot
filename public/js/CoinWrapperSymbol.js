@@ -11,7 +11,7 @@ class CoinWrapperSymbol extends React.Component {
   }
 
   tryRequire(baseAsset){
-    return fetch(`/public/img/${_.toLower(baseAsset)}.png`)
+    const fetch = fetch(`./img/${_.toLower(baseAsset)}.png`)
         .then(response => {
           if (response.ok) {
             return response.json()
@@ -27,6 +27,8 @@ class CoinWrapperSymbol extends React.Component {
             alt={`${baseAsset} icon`}
         />)
         .catch(error =>  <span>{_.toUpper(baseAsset)}</span>);
+
+    console.log(fetch)
   };
 
   render() {
