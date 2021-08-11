@@ -10,6 +10,14 @@ class CoinWrapperSymbol extends React.Component {
     return symbols.includes(symbol);
   }
 
+  tryRequire(path){
+    try {
+      return require(`${path}`);
+    } catch (err) {
+      return null;
+    }
+  };
+
   render() {
     const {
       symbol,
@@ -54,11 +62,17 @@ class CoinWrapperSymbol extends React.Component {
                 )
               ]
             : ''}
-          <img
-            src={`./img/${_.toLower(baseAsset)}.png`}
-            className='crypto-img'
-            alt={`${baseAsset} icon`}
-          />
+          {
+            this.tryRequire(`./img/${_.toLower(baseAsset)}`) ? (
+                <img
+                    src={`./img/${_.toLower(baseAsset)}.png`}
+                    className='crypto-img'
+                    alt={`${baseAsset} icon`}
+                />
+            ) : (
+                <span>{_.toUpper(baseAsset)}</span>
+            )
+          }
         </div>
         <div className='coin-info-column coin-info-column-icon'>
           <SymbolManualTradeIcon
