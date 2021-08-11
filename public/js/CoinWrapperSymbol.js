@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-no-undef */
 /* eslint-disable no-undef */
+
 class CoinWrapperSymbol extends React.Component {
   isMonitoring() {
     const { configuration, symbolInfo } = this.props;
@@ -63,7 +64,7 @@ class CoinWrapperSymbol extends React.Component {
               ]
             : ''}
           {
-            this.tryRequire(`public/img/${_.toLower(baseAsset)}`) ? (
+            this.tryRequire(`public/img/${_.toLower(baseAsset)}.png`) ? (
                 <img
                     src={`./img/${_.toLower(baseAsset)}.png`}
                     className='crypto-img'
