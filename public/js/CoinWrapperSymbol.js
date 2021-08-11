@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-no-undef */
 /* eslint-disable no-undef */
-
 class CoinWrapperSymbol extends React.Component {
   isMonitoring() {
     const { configuration, symbolInfo } = this.props;
@@ -13,7 +12,7 @@ class CoinWrapperSymbol extends React.Component {
 
   tryRequire(path){
     try {
-      return require(`${path}`);
+      return require(path);
     } catch (err) {
       return null;
     }
