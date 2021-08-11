@@ -11,10 +11,11 @@ class CoinWrapperSymbol extends React.Component {
   }
 
   tryRequire(path){
-    console.log(__dirname,path)
+    console.log(path)
     try {
-      return require(__dirname + path);
+      return require(path);
     } catch (err) {
+      console.log(err)
       return null;
     }
   };
