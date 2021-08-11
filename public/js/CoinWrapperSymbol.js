@@ -63,7 +63,7 @@ class CoinWrapperSymbol extends React.Component {
               ]
             : ''}
           {
-            this.tryRequire(`public/img/${_.toLower(baseAsset)}.png`) ? (
+            this.tryRequire(`../img/${_.toLower(baseAsset)}.png`) ? (
                 <img
                     src={`./img/${_.toLower(baseAsset)}.png`}
                     className='crypto-img'
