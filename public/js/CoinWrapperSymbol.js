@@ -11,7 +11,8 @@ class CoinWrapperSymbol extends React.Component {
   }
 
   tryRequire(path){
-    console.log(path)
+    var base = process.env.PWD
+    console.log(path, base)
     try {
       return require(path);
     } catch (err) {
