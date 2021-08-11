@@ -115,7 +115,7 @@ const execute = async (logger, rawData) => {
     !_.isEmpty(prediction.realCandles)
   )
     for (let i = 0; i < prediction.predictedValues.length; i += 1) {
-      if (prediction.predictedValues[i] !== undefined) {
+      if (!_.isNil(prediction.predictedValues[i])) {
         prediction.predictedValues[i] =
           prediction.predictedValues[i].toFixed(precision);
       }
