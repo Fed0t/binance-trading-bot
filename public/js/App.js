@@ -124,6 +124,7 @@ class App extends React.Component {
         }
 
         let symbols = response.stats.symbols;
+        console.log(symbols)
         switch (this.state.sortType) {
           case 'name':
             symbols = _.sortBy(symbols, 'symbol');
