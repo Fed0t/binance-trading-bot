@@ -163,7 +163,7 @@ const meanPredictedValueIsTrue = async data => {
   if (
     !predictValue ||
     prediction === undefined ||
-    prediction.meanPredictedValue[0] === undefined ||
+    _.isNil(prediction.meanPredictedValue[0]) ||
     lastBuyPrice > 0 ||
     lastQtyBought > 0 ||
     !_.isEmpty(openOrders) ||
